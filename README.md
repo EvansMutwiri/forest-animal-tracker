@@ -43,16 +43,16 @@ Connect to database
 ```
 Create tables
 ```
-=# CREATE TABLE animals (id serial PRIMARY KEY, animal_name varchar, rangerId int); 
+=# CREATE TABLE sightings (id serial PRIMARY KEY, name varchar, type varchar, location varchar, rangerName varchar); 
 ```
 ```
-=# CREATE TABLE endangered_animals (id serial PRIMARY KEY, animal_name varchar, health varchar, age numeric); 
-```
-```
-=# CREATE TABLE sightings (id serial PRIMARY KEY, location varchar, rangerName varchar); 
+=# CREATE TABLE animals (id serial PRIMARY KEY, name varchar, type varchar, age int, health varchar, location varchar, rangerName varchar); 
 ```
 ## TECHNOLOGIES USED
-
+- java
+- java spark
+- handlebars java
+- gradle compiler
 
 ## Contributing
 
