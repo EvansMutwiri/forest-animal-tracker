@@ -4,6 +4,7 @@ public abstract class Sighting {
     public int id;
     public String name;
     public String type;
+    public int age;
     public String location;
     public String rangerName;
 
@@ -27,10 +28,11 @@ public abstract class Sighting {
         return super.toString();
     }
 
-    public Sighting(int id, String name, String type, String location, String rangerName) {
+    public Sighting(int id, String name, String type, int age, String location, String rangerName) {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.age = age;
         this.location = location;
         this.rangerName = rangerName;
     }
@@ -41,6 +43,7 @@ public abstract class Sighting {
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
                     .addParameter( "type",this.type)
+                    .addParameter("id",this.id)
                     .addParameter( "location",this.location)
                     .addParameter( "rangerName",this.rangerName)
                     .executeUpdate()
