@@ -4,7 +4,7 @@ public abstract class Sighting {
     public int id;
     public String name;
     public String type;
-    public int age;
+    public String age;
     public String location;
     public String rangerName;
 
@@ -53,4 +53,6 @@ public abstract class Sighting {
                     .getKey();
         }
     }
+
+    public abstract int getEndangeredAnimalId();
 }
