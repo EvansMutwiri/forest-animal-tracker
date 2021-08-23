@@ -1,8 +1,5 @@
+import models.EndangeredAnimal;
 import org.junit.jupiter.api.Test;
-
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

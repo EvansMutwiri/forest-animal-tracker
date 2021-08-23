@@ -1,3 +1,6 @@
+package models;
+
+import models.DB;
 import org.sql2o.*;
 
 public abstract class Sighting {

@@ -1,3 +1,5 @@
+package models;
+
 import org.sql2o.Connection;
 import java.util.List;
 
@@ -7,7 +9,6 @@ public class EndangeredAnimal extends Animal {
     private String location;
 
     public EndangeredAnimal(String name, String type, String age, String location, String rangerName) {
-        super(name, type, age, location, rangerName);
         this.health=health;
         this.age=age;
         this.name=name;
@@ -86,7 +87,7 @@ public class EndangeredAnimal extends Animal {
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(EndangeredAnimal.class);
             if (animal == null) {
-                throw new UnsupportedOperationException("Animal not found");
+                throw new UnsupportedOperationException("models.Animal not found");
             }
             return animal;
         }
