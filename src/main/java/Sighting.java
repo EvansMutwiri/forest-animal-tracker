@@ -34,4 +34,17 @@ public abstract class Sighting {
         this.location = location;
         this.rangerName = rangerName;
     }
+
+    public void save() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO sightings (name, type, location, rangerName) VALUES (:name, :type, :location, :rangerName)";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter( "type",this.type)
+                    .addParameter( "location",this.location)
+                    .addParameter( "rangerName",this.rangerName)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
 }
