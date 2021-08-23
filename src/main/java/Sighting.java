@@ -8,9 +8,6 @@ public abstract class Sighting {
     public String location;
     public String rangerName;
 
-    protected Sighting() {
-    }
-
     @Override
     public int hashCode() {
         return super.hashCode();

@@ -6,16 +6,10 @@ public class Animal extends Sighting{
     public int id;
     public String name;
 
-    public Animal(int id, String name) {
+    public Animal(int id, String name, String type, String age, String location, String rangerName) {
+        super(id, name, type, age, location, rangerName);
         this.id = id;
         this.name = name;
-    }
-
-    public Animal() {
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
@@ -41,6 +35,11 @@ public class Animal extends Sighting{
                     .executeUpdate()
                     .getKey();
         }
+    }
+
+    @Override
+    public int getEndangeredAnimalId() {
+        return id;
     }
 
 }

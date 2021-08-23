@@ -6,6 +6,14 @@ public class EndangeredAnimal extends Animal {
     private String age;
     private String location;
 
+    public EndangeredAnimal(int id, String name, String type, String age, String location, String rangerName) {
+        super(id, name, type, age, location, rangerName);
+        this.health=health;
+        this.age=age;
+        this.name=name;
+        this.location=location;
+    }
+
     public String getHealth() {
         return health;
     }
@@ -49,13 +57,6 @@ public class EndangeredAnimal extends Animal {
     public static final String NEWBORN = "newborn";
     public static final String YOUNG  = "young";
     public static final String ADULT  = "adult";
-
-    public EndangeredAnimal(String name, String health, String age, String location) {
-        this.health=health;
-        this.age=age;
-        this.name=name;
-        this.location=location;
-    }
 
     @Override
     public void save(){
