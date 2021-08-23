@@ -6,7 +6,7 @@ import org.sql2o.Sql2oException;
 import java.util.List;
 import java.util.Objects;
 
-public class Animal extends AnimalInterface {
+public class Animal implements AnimalInterface {
     public Animal(String name) {
         this.name = name;
         this.endangered = false;

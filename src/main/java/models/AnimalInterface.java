@@ -1,5 +1,9 @@
 package models;
 
-public abstract class AnimalInterface {
-    abstract void save();
+public interface AnimalInterface {
+    void save();
+
+    void update(String name);
+
+    void deleteById(int id);
 }
