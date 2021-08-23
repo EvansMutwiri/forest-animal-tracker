@@ -6,6 +6,14 @@ public class Animal extends Sighting{
     public int id;
     public String name;
 
+    public Animal(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Animal() {
+    }
+
     public int getId() {
         return id;
     }
