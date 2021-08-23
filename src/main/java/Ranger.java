@@ -4,11 +4,11 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class Ranger {
-    public  int id;
+    public  int rangerId;
     public  String name;
 
-    public Ranger(int id, String name) {
-        this.id = id;
+    public Ranger(int rangerId, String name) {
+        this.rangerId = rangerId;
         this.name = name;
     }
 
@@ -19,8 +19,8 @@ public class Ranger {
     public void save() {
         try(Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO ranger (id, name) VALUES (:id, :name)";
-            this.id = (int) con.createQuery(sql, true)
-                    .addParameter("rangerId", this.id)
+            this.rangerId = (int) con.createQuery(sql, true)
+                    .addParameter("rangerId", this.rangerId)
                     .addParameter("name", this.name)
                     .executeUpdate()
                     .getKey();
@@ -35,6 +35,6 @@ public class Ranger {
     }
 
     public int getRangerId() {
-        return id;
+        return rangerId;
     }
 }

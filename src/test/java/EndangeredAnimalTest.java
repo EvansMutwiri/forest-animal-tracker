@@ -18,7 +18,7 @@ class EndangeredAnimalTest {
     @Test
     public void getId_endangeredAnimalInstantiatesWithEndangeredAnimalId_int() {
         EndangeredAnimal testEndangeredAnimal = new EndangeredAnimal("gir", "adult","ill", "zone A", "SiR");
-        assertEquals(1, testEndangeredAnimal.getEndangeredAnimalId());
+        assertEquals(0, testEndangeredAnimal.getEndangeredAnimalId());
     }
 
     @Test
