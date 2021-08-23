@@ -28,7 +28,7 @@ public abstract class Sighting {
         return super.toString();
     }
 
-    public Sighting(int id, String name, String type, String age, String location, String rangerName) {
+    public Sighting(String name, String type, String age, String location, String rangerName) {
         this.id = id;
         this.name = name;
         this.type = type;
