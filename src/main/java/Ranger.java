@@ -1,5 +1,6 @@
 import org.sql2o.Connection;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class Ranger {
@@ -11,18 +12,15 @@ public class Ranger {
         this.name = name;
     }
 
-    public static Object find(int rangerId) {
-        return rangerId;
-    }
-
     public String getName() {
         return name;
     }
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO ranger (name,contact,badgeNumber) VALUES (:name,:contact,:badgeNumber)";
+            String sql = "INSERT INTO ranger (id, name) VALUES (:id, :name)";
             this.id = (int) con.createQuery(sql, true)
+                    .addParameter("rangerId", this.id)
                     .addParameter("name", this.name)
                     .executeUpdate()
                     .getKey();

@@ -52,16 +52,4 @@ class RangerTest {
         assertEquals(true, Ranger.all().get(0).equals(firstRanger));
         assertEquals(true, Ranger.all().get(1).equals(secondRanger));
     }
-    
-
-    //One-to-Many Relationship
-
-    @Test
-    public void save_recordsTimeOfCreationInDatabase() {
-        Ranger testRanger = new Ranger(1, "Bubbles");
-        testRanger.save();
-        Timestamp savedRangerTime = Ranger.find(testRanger.getRangerId()).getRecordTime();
-        Timestamp rightNow = new Timestamp(new Date().getTime());
-        assertEquals(rightNow.getTime(), savedRangerTime.getTime());
-    }
 }
