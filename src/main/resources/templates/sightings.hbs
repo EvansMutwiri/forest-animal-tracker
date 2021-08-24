@@ -1,0 +1,36 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/sightings.css'>
+{{/partial}}
+{{#partial "content"}}
+    {{#if sightings}}
+        <table id="dtBasicExample" class="table" width="100%">
+            <thead>
+            <tr>
+                <th class="th-sm">Animal Id
+                </th>
+                <th class="th-sm">location
+                </th>
+                <th class="th-sm">Ranger Name
+                </th>
+                <th class="th-sm"><a class="btn btn-warning" type="button" id="non-endangered" href="/sighting/new">Add sighting</a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each sightings}}
+                <tr>
+                    <td>{{animalId}}</td>
+                    <td>{{location}}</td>
+                    <td>{{rangerName}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <br><br><br><br><br>
+        <div class="d-flex justify-content-center">
+            No sightings yet recorder.<br><a class="btn btn-warning" type="button" id="non-endangered" href="/sighting/new">Add sighting</a>
+        </div>
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}
