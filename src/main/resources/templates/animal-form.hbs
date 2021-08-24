@@ -1,0 +1,18 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "form"}}
+    <div class="container">
+        <div class="container bg-content">
+            <a class="btn btn-outline-success" type="button" id="non-endangered" href="/animal/new">Non-endangered</a>
+            <a class="btn btn-outline-success" type="button" id="endangered" href="/endangered/new">Endangered</a>
+        <form action="/animal" method="post">
+            <div class="form-group md-form">
+                <!--            <label for="name">Animal Name</label>-->
+                <input placeholder="Animal Name" id="name" name="name" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-dark-green">Add Animal</button>
+        </form>
+    </div>
+{{/partial}}
+{{> animal-form-layout.hbs}}
