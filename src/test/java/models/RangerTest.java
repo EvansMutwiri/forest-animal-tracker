@@ -1,10 +1,14 @@
-import models.Ranger;
-import org.junit.jupiter.api.Test;
+package models;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import models.Ranger;
+import org.junit.Rule;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 class RangerTest {
+    @Rule
+    public DatabaseRule databaseRule=new DatabaseRule();
 
     @Test
     public void ranger_instantiatesCorrectly_true() {

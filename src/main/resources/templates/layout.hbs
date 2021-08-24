@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     {{#block "styles"}}{{/block}}
 </head>
-<body>
+<body class="bd">
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-1">
         <a class="navbar-brand h-1" href="/">Wildlife Tracker</a>
@@ -35,11 +35,13 @@
     </nav>
 </div>
 
-<div class="container bg-content">
-    <!--    begin main template-->
-    {{#block "content"}}
+<div class="container-fluid">
+    <div class="container bg-content">
+        <!--    begin main template-->
+        {{#block "content"}}
 
-    {{/block}}
+        {{/block}}
+    </div>
 </div>
 <!--end main template-->
 {{#block "footer"}}

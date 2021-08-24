@@ -1,28 +1,49 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
 {{#partial "content"}}
-    <h1>Add a Sighting</h1>
+    <style>
+    body{
+     background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+    text-align:center;
+    }
+    form {
+    top:50%;
+    color:white;
+    }
+</style>
+    <h2>Report A Sighting</h2><hr>
+    <div class="row">
+        <div class="col col-sm-6 form-left">
+            <br/>
+            <form action="/sighting" method="post" >
+                <div class="form-group">
+                    <label for="exampleInputEmail1">animal Name</label><br>
+                    <input type="text" class="form-control" name="animalName" aria-describedby="emailHelp" placeholder="animalName">
+                </div>
+                <div class="form-group">
+                    <label for="sightLocation">Sighting Location</label><br>
+                    <select class="mdb-select md-form" name="sightLocation" >
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="Zone 1 ">Zone 1 </option>
+                        <option value="Zone 2 ">Zone 2</option>
+                        <option value="Zone 3">Zone 3 </option>
+                    </select>
 
-    <form action="/sighting" method="post">
-        <div class="form-group md-form">
-            <select class="browser-default custom-select" id="animalId" name="animalId">
-                <option selected>Open this select animal</option>
-                {{#each endangered}}
-                    <option value="{{id}}">{{id}}.{{name}}</option>
-                {{/each}}
-                {{#each animals}}
-                    <option value="{{id}}">{{id}}.{{name}}</option>
-                {{/each}}
-            </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Ranger Name</label><br>
+                    <input type="text" class="form-control" name="ranger"  placeholder="ranger">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-        <div class="form-group md-form">
-            <input placeholder="location" id="location" name="location" type="text" class="form-control">
-        </div>
-        <div class="form-group md-form">
-            <input placeholder="Ranger name" id="rangerName" name="rangerName" type="text" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-dark-green">Add Sighting</button>
-    </form>
+    </div>
+
+
+
 {{/partial}}
-{{> layout.hbs}}
+
+{{>layout.hbs}}

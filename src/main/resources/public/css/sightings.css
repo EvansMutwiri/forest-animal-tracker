@@ -1,3 +1,7 @@
 body {
    background-color: #68C955;
+   background-image: url("/images/bird.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: right;
 }
