@@ -1,12 +1,11 @@
-import java.util.ArrayList;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import spark.ModelAndView;
-import spark.template.handlebars.HandlebarsTemplateEngine;
+
 import static spark.Spark.*;
-import static spark.Spark.get;
-import static spark.Spark.post;
 
 public class App {
     public static void main(String[] args) {

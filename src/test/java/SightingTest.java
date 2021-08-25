@@ -1,10 +1,10 @@
-import org.sql2o.*;
-import org.junit.*;
-import static org.junit.Assert.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
+import org.junit.Rule;
+import org.junit.Test;
+
+
+
+import static org.junit.Assert.assertEquals;
+
 public class SightingTest {
 
     Sight sightingAlpha = new Sight("zebra", "zone 1", "nel");
@@ -36,8 +36,5 @@ public class SightingTest {
         Sight testSighting = sightingAlpha;
         assertEquals("zone 1", testSighting.getSightLocation());
     }
-
-
-
 }
 
