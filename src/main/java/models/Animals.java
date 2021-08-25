@@ -6,8 +6,8 @@ import org.sql2o.Sql2oException;
 import java.util.List;
 import java.util.Objects;
 
-public class Animal implements AnimalInterface {
-    public Animal(String name) {
+public class Animals implements AnimalInterface {
+    public Animals(String name) {
         this.name = name;
         this.endangered = false;
     }
@@ -56,28 +56,28 @@ public class Animal implements AnimalInterface {
         }
     }
 
-    public static Animal findById(int id) {
+    public static Animals findById(int id) {
         try(Connection conn = DB.sql2o.open()){
             String sql = "SELECT * FROM  animals WHERE id=:id";
             return conn.createQuery(sql)
                     .addParameter("id",id)
                     .throwOnMappingFailure(false)
-                    .executeAndFetchFirst(Animal.class);
+                    .executeAndFetchFirst(Animals.class);
         }
     }
 
-    public static List<Animal> all() {
+    public static List<Animals> all() {
         String sql = "SELECT * FROM animals WHERE endangered=false";
         try(Connection con = DB.sql2o.open()) {
-            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(Animal.class);
+            return con.createQuery(sql).throwOnMappingFailure(false).executeAndFetch(Animals.class);
         }
     }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Animal animal = (Animal) o;
-        return name.equals(animal.name);
+        Animals animals = (Animals) o;
+        return name.equals(animals.name);
     }
 
     @Override
@@ -89,3 +89,4 @@ public class Animal implements AnimalInterface {
     public int id;
     public boolean endangered;
 }
+

@@ -1,4 +1,4 @@
-import models.Animal;
+import models.Animals;
 import models.EndangeredAnimal;
 import models.Sightings;
 import spark.ModelAndView;
@@ -35,26 +35,26 @@ public class App {
 
         get("/animals", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("animals", Animal.all());
+            model.put("animals",Animals.all());
             model.put("endangered",EndangeredAnimal.allEndangered());
             return new ModelAndView(model, "animals.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/animals/new", (request, response) -> {
+        get("/animal/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "animal-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/sighting/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("animals", Animal.all());
+            model.put("animals",Animals.all());
             model.put("endangered",EndangeredAnimal.allEndangered());
             return new ModelAndView(model, "sightings-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/animals", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("animals", Animal.all());
+            model.put("animals",Animals.all());
             model.put("endangered",EndangeredAnimal.allEndangered());
             return new ModelAndView(model, "animals.hbs");
         }, new HandlebarsTemplateEngine());
@@ -65,7 +65,7 @@ public class App {
             model.put("young",EndangeredAnimal.YOUNG);
             model.put("newborn",EndangeredAnimal.NEWBORN);
             model.put("healthy",EndangeredAnimal.HEALTHY);
-            model.put("okay",EndangeredAnimal.OKAY);
+            model.put("average",EndangeredAnimal.AVERAGE);
             model.put("ill",EndangeredAnimal.ILL);
             return new ModelAndView(model, "endangeredAnimal-form.hbs");
         }, new HandlebarsTemplateEngine());
@@ -73,7 +73,7 @@ public class App {
         post("/animal", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            Animal animal = new Animal(name);
+            Animals animal = new Animals(name);
             animal.save();
             response.redirect("/animals");
             return null;
