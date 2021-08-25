@@ -1,19 +1,19 @@
 {{#partial "content"}}
-<!--    <style>-->
-<!--    body{-->
-<!--     background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);-->
-<!--    text-align:center;-->
-<!--    }-->
-<!--    form {-->
-<!--    top:50%;-->
-<!--    color:white;-->
-<!--    }-->
-<!--</style>-->
+    <style>
+    body{
+     background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+    text-align:center;
+    }
+    form {
+    top:50%;
+    color:white;
+    }
+</style>
     <h2>Report A Sighting</h2><hr>
     <div class="row">
         <div class="col col-sm-6 form-left">
             <br/>
-            <form action="/sighting" method="post" >
+            <form action="/new-sighting" method="post" >
                 <div class="form-group">
                     <label for="exampleInputEmail1">animal Name</label><br>
                     <input type="text" class="form-control" name="animalName" aria-describedby="emailHelp" placeholder="animalName">

@@ -1,46 +1,51 @@
 {{#partial "content"}}
-    <div class="container bg-content">
-<!--        <a class="btn btn-outline" type="button" id="non-endangered" href="/animal/new">Non-endangered</a>-->
-        <a class="btn btn-outline" type="button" id="endangered" href="/endangered/new">Endangered</a>
-
-        {{#if "endangered"}}
-                <div class="form-group md-form">
-                    <!--            <label for="name">Animal Name</label>-->
-                    <input placeholder="Animal Name" id="name" name="name" type="text" class="form-control">
+    <style>
+form{
+top:50%;
+color:white;
+}
+body{
+  background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+       text-align:center;
+}
+    </style><br><br>
+    <h2>Add Animal</h2><hr>
+    <div class="row">
+        <div class="col col-sm-6 form-left">
+            <br/>
+            <form action="/new-animals" method="post" >
+                <div class="form-group">
+                    <label for="animalName">Name of an Animal</label><br>
+                    <input class="form-control" type="text" id="animalName" name="animalName" placeholder="Animal Name"/>
                 </div>
-                <div class="form-group md-form">
-                    <select class="browser-default custom-select" id="health" name="health">
-                        <option selected>Open this select health</option>
-                        <option value="{{healthy}}">{{healthy}}</option>
-                        <option value="{{average}}">{{average}}</option>
-                        <option value="{{ill}}">{{ill}}</option>
+
+                <input type="checkbox" name="strange" value="yes"/>
+                <label for="strange">Is the Species Endangered?</label>
+
+                <div class="form-group">
+                    <label for="health">Health</label><br>
+                    <select class="mdb-select md-form" name="health" STYLE="width:100%;height:40px;border-radius:4px">
+                        <option value="" disabled selected>Choose Health Condition</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Okay">Okay</option>
+                        <option value="Ill">Ill</option>
                     </select>
                 </div>
-                <div class="form-group md-form">
-                    <select class="browser-default custom-select" id="age" name="age">
-                        <option selected>Open this select age</option>
-                        <option value="{{adult}}">{{adult}}</option>
-                        <option value="{{young}}">{{young}}</option>
-                        <option value="{{newborn}}">{{newborn}}</option>
+
+                <div class="form-group">
+                    <label for="age"> Age </label><br>
+                    <select class="mdb-select md-form" name="age" STYLE="width:100%;height:40px;border-radius:4px"><br>
+                        <option value="" disabled selected>Choose Age</option>
+                        <option value="Newborn">Newborn</option>
+                        <option value="Young">Young</option>
+                        <option value="Adult">Adult</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-dark-green">Add Animal</button>
-                </form>
-            </div>
-        {{else}}
-            <div class="container">
-                <form action="/animal" method="post">
-                    <div class="form-group md-form">
-                        <!--            <label for="name">Animal Name</label>-->
-                        <input placeholder="Animal Name" id="name" name="name" type="text" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-dark-green">Add Animal</button>
-                </form>
-            </div>
 
-        {{/if}}
-
-
+                <button type="submit" class="btn btn-primary">Add Animal</button>
+            </form>
+        </div>
     </div>
 {{/partial}}
-{{> layout.hbs}}
+
+{{>layout.hbs}}
