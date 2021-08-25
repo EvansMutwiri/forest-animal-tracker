@@ -3,22 +3,26 @@
 <head>
     <title>
         {{#block "title"}}
-            <meta charset="utf-8"/>
+            Wildlife Track
         {{/block}}
-        <title>Wildlife Track</title>
+    </title>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-    <link rel='stylesheet' href='resources/app.css'/>
+    <link rel='stylesheet' href='resources/main.css'/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
-
-    </title>
+</head>
     <style>
 @import url("https://fonts.googleapis.com/css?family=Fascinate+Inline|Kalam|Orbitron&display=swap");
 body {
  background-color: #63d471;
-background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
-
-text-align:center;
+ background-image:linear-gradient(
+       rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+       url("./images/bird.png");
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-position: right;
+       text-align:center;
 }
 
 
@@ -77,7 +81,7 @@ float:left;
     <br/>
     <br/>
 </div>
-<a href="/"><img src="/images/bg.png" ></a>
+<a href="/"><img src="/images/elephant.png" ></a>
 {{#block "content"}}
 
 {{/block}}
