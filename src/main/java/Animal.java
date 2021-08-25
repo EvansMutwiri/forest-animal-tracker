@@ -1,6 +1,4 @@
-import org.sql2o.*;
-import java.util.ArrayList;
-import java.util.List;
+import org.sql2o.Connection;
 
 public abstract class Animal {
     public String name;
