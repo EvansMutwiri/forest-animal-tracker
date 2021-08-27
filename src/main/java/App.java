@@ -38,19 +38,19 @@ public class App {
         post("/new-animals", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             String name=request.queryParams("animalName");
-            boolean strange = request.queryParams("strange") != null;
-            if(strange) {
+            boolean endangered = request.queryParams("endangered") != null;
+            if(endangered) {
                 String health = request.queryParams("health");
                 String age = request.queryParams("age");
-                StrangeAnimal strangeAnimal = new StrangeAnimal(name, health, age);
-                strangeAnimal.save();
+                EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
+                endangeredAnimal.save();
                 model.put("name", name);
                 model.put("health",health);
                 model.put("age",age);
             }
             else {
-                StrangeAnimal strangeAnimal= new StrangeAnimal(name,null,null);
-                strangeAnimal.save();
+                EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name,null,null);
+                endangeredAnimal.save();
                 model.put("name", name);
             }
             return new ModelAndView(model, "new-animal.hbs");
@@ -60,8 +60,8 @@ public class App {
         // list all animals
         get("/animals", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            List<StrangeAnimal> strangeAnimals = StrangeAnimal.all();
-            model.put("animals", strangeAnimals);
+            List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.all();
+            model.put("animals", endangeredAnimals);
             return new ModelAndView(model, "animals.hbs");
         }, new HandlebarsTemplateEngine());
 
