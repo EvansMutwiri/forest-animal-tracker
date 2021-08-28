@@ -3,29 +3,44 @@
     <style>
     @import url("https://fonts.googleapis.com/css?family=Fascinate+Inline|Kalam|Orbitron|Luckiest+Guy&display=swap");
     @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-        body {
-       text-align:center;
 
-             }
 
        h3{
          color:black;
-         width:60%;
          height:100%;
          border-radius:10px;
          font-family: 'Bubblegum Sans', cursive;
            }
        h4{
          color: #ffff;
-         width:60%;
+
          height:100%;
          border-radius:10px;
          font-family: 'Bubblegum Sans', cursive;
        }
-    </style><br><br><br>
-    <h3 class="text-center">There's only one earth</h3>
-    <br>
-    <h4 class="text-center">Fill the form to add a new sighting or to view the existing animals.</h4>
+    </style>
+
+    <div class="container">
+        <br><br><br><br>
+        <h1>WILDLIFE TRACKER</h1>
+        <br/>
+        <br/>
+        <br/>
+
+        <br><br>
+        <h3><i class="fas fa-quote-left"></i>There's only one earth</h3>
+        <br><br>
+        <h4>Fill the form to add a new sighting or view the existing animals.</h4> <br>
+    </div>
+    <br><br>
+
+    <div class="btn-group btn-group-sm">
+        <a type="button" class="btn btn-secondary" href="/animal/new">Add animal</a>
+        <a type="button" class="btn btn-secondary" href="/new-sighting">Add sighting</a>
+        <a type="button" class="btn btn-secondary" href="/sightings">Sightings</a>
+        <a type="button" class="btn btn-secondary" href="/animals">Animals</a>
+        <a type="button" class="btn btn-secondary">Rangers</a>
+    </div>
 {{/partial}}
 
 {{>layout.hbs}}

@@ -3,7 +3,7 @@ import org.sql2o.Connection;
 public abstract class Animal {
     public String name;
     public int id;
-    public boolean  strange;
+    public boolean  endangered;
 
     public String getName() {
         return name;
@@ -21,10 +21,10 @@ public abstract class Animal {
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (name,strange) VALUES (:name,:strange)";
+            String sql = "INSERT INTO animals (name,endangered) VALUES (:name,:endangered)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
-                    .addParameter( "strange",this.strange)
+                    .addParameter( "endangered",this.endangered)
                     .executeUpdate()
                     .getKey();
         }

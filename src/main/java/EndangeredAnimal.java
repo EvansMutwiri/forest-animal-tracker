@@ -1,7 +1,7 @@
 import org.sql2o.Connection;
 import java.util.List;
 
-public class StrangeAnimal  extends Animal {
+public class EndangeredAnimal extends Animal {
     private String health;
     private String age;
 
@@ -13,11 +13,11 @@ public class StrangeAnimal  extends Animal {
     public static final String YOUNG2  = "young";
     public static final String ADULT3  = "adult";
 
-    public StrangeAnimal(String name,String health,String age) {
+    public EndangeredAnimal(String name, String health, String age) {
         this.health=health;
         this.age=age;
         this.name=name;
-        strange=true;
+        endangered=true;
     }
 
     @Override
@@ -33,19 +33,19 @@ public class StrangeAnimal  extends Animal {
         }
     }
 
-    public static List<StrangeAnimal> all(){
+    public static List<EndangeredAnimal> all(){
         String sql = "SELECT * FROM animals;";
         try(Connection connect= DB.sql2o.open()){
-            return connect.createQuery(sql).executeAndFetch(StrangeAnimal.class);
+            return connect.createQuery(sql).executeAndFetch(EndangeredAnimal.class);
         }
     }
-    public static StrangeAnimal find(int id){
+    public static EndangeredAnimal find(int id){
         try(Connection connect = DB.sql2o.open()){
             String sql = "SELECT * FROM animals WHERE id= :id;";
-            StrangeAnimal animal = connect.createQuery(sql)
+            EndangeredAnimal animal = connect.createQuery(sql)
                     .addParameter("id", id)
                     .throwOnMappingFailure(false)
-                    .executeAndFetchFirst(StrangeAnimal.class);
+                    .executeAndFetchFirst(EndangeredAnimal.class);
             if (animal == null) {
                 throw new UnsupportedOperationException("Sorry, this animal cannot be found.");
             }

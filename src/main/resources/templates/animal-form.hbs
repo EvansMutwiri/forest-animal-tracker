@@ -5,6 +5,7 @@ top:50%;
 color:white;
 }
 body{
+padding-top: 5%;
   background-image:linear-gradient(
        rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
        url("./images/bird.png");
@@ -16,12 +17,17 @@ body{
             <br/>
             <form action="/new-animals" method="post" >
                 <div class="form-group">
-                    <label for="animalName">Name of an Animal</label><br>
+                    <label for="animalName">Name of Animal</label><br>
                     <input class="form-control" type="text" id="animalName" name="animalName" placeholder="Animal Name"/>
                 </div>
 
-                <input type="checkbox" name="strange" value="yes"/>
-                <label for="strange">Is the Species Endangered?</label>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="endangered" value="yes">
+                    <label class="form-check-label" for="endangered">Is the Species Endangered?</label>
+                </div>
+
+<!--                <input type="checkbox" name="endangered" value="yes"/>-->
+<!--                <label for="endangered">Is the Species Endangered?</label>-->
 
                 <div class="form-group">
                     <label for="health">Health</label><br>
